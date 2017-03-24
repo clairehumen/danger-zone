@@ -7,6 +7,6 @@ public class ScaleRunner {
         ms.printRoot();
         ms.printScale();
         Bass bass = new Bass();
-        bass.playScale(ms);
+    //    bass.playScale(ms);
     }
 }
