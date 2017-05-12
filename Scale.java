@@ -3,6 +3,8 @@
  */
 public abstract class Scale {
 	
+	public abstract int[] getSequence();
+	
 	public Scale()
 	{
 		super();
