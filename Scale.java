@@ -3,6 +3,8 @@
  */
 public abstract class Scale {
 	
+	public abstract int[] getSequence();
+	
 	public Scale()
 	{
 		super();
@@ -45,4 +47,3 @@ public abstract class Scale {
 	public static final int MAJ7 = 11 ;
 	
 }
-public abstract int[] getSequence();
