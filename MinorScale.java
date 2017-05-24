@@ -3,6 +3,10 @@
  */
 public abstract class MinorScale extends Scale {
 
+	public MinorScale(String root) {
+		super(root);
+	}
+
 	public MinorScale()
 	{
 		super();

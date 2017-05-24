@@ -1,9 +1,22 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by clairehumen on 3/20/17.
  */
 public abstract class Scale {
 	
 	public abstract int[] getSequence();
+	
+	public String[] getNoteSequence()
+	{
+		if ( this.getRoot().indexOf('#') >= 0 )
+		{
+			return Note.NOTE_SEQUENCE2 ;
+		}
+		return Note.NOTE_SEQUENCE;
+	}
 	
 	public Scale()
 	{
@@ -30,8 +43,53 @@ public abstract class Scale {
 		System.out.println(this.root);
 	}
 
-	public void printScale() {
-		System.out.println("I don't know how to do this yet");
+	public String getScale() {
+		
+		String[] noteSequence = this.getNoteSequence() ;
+		List<String> noteCollection = new ArrayList<String>();
+		noteCollection.addAll(Arrays.asList(noteSequence));
+		noteCollection.addAll(Arrays.asList(noteSequence));
+
+		String scale = this.getRoot() ;
+		String noteSeparator = ",";
+
+		int currentPosition = noteCollection.indexOf(this.getRoot()) ;
+		
+		for ( int seq : getSequence() )
+		{
+			scale = scale + noteSeparator ;
+			currentPosition = currentPosition + seq ;
+			String noteToAdd = noteCollection.get(currentPosition);
+			scale = scale + noteToAdd;
+			noteSeparator = ",";
+		}
+		
+		return scale;
+	}
+	
+	public void printScale()
+	{
+		System.out.println("TYPE = " + this.getRoot() + " " + this.getClass().getSimpleName());
+		System.out.println("UP = " + this.getScale());
+		System.out.println("DOWN = " + this.getDownScale());
+	}
+	
+	public String getDownScale()
+	{
+		/*
+		 * Override if needed in the case of the melodic minor scale
+		 */
+		String scale = this.getScale() ;
+		String[] notes = scale.split("[,]");
+		String downScale = "" ;
+		String noteSeparator = "" ;
+		for ( int i = notes.length -1 ; i >= 0 ; i--)
+		{
+			downScale = downScale + noteSeparator ;
+			downScale = downScale + notes[i];
+			noteSeparator = ",";
+		}
+		return downScale ;
 	}
 
 	public static final int HALF = 1;

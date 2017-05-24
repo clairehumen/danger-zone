@@ -3,10 +3,13 @@
  */
 public class ScaleRunner {
     public static void main (String[] args) {
-        MajorScale ms = new MajorScale("C");
-        ms.printRoot();
+        Scale ms = new MajorScale(Note.Eb);
         ms.printScale();
-        Bass bass = new Bass();
-    //    bass.playScale(ms);
+        ms = new NaturalMinorScale(Note.E);
+        ms.printScale();
+        ms = new MelodicMinorScale(Note.C);
+        ms.printScale();
+        ms = new HarmonicMinorScale(Note.C);
+        ms.printScale();
     }
 }

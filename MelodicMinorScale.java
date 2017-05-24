@@ -3,9 +3,12 @@
  */
 public class MelodicMinorScale extends MinorScale {
 
+	public MelodicMinorScale(String root) {
+		super(root);
+	}
+	
 	@Override
 	public int[] getSequence() {
-		// TODO Auto-generated method stub
-		return null;
+        return new int[] {WHOLE, HALF, WHOLE, WHOLE, HALF, MIN3, HALF};
 	}
 }
