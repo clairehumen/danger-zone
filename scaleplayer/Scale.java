@@ -46,26 +46,58 @@ public abstract class Scale {
 
 	public String getScale() {
 		
+		/*
+		 * Get the sequence of notes for this scale. This is so we know whether to use sharps or flats.
+		 */
 		String[] noteSequence = this.getNoteSequence() ;
+		/*
+		 * Define an arraylist of notes. Add two sequences since we don't want to deal with
+		 * trying to loop back around when we are getting our notes. Think of this as making a 
+		 * two octave chromatic scale.
+		 */
 		List<String> noteCollection = new ArrayList<String>();
 		noteCollection.addAll(Arrays.asList(noteSequence));
 		noteCollection.addAll(Arrays.asList(noteSequence));
 
-		String scale = this.getRoot() ;
+		/*
+		 * This is our final output
+		 */
+		String scaleOutput = this.getRoot() ;
+		/*
+		 * What we will use to separate the notes
+		 */
 		String noteSeparator = ",";
 
+		/*
+		 * Now if we have this two octave scale, we just find the root and
+		 * walk up the scale by the steps that we have defined in the concrete class. 
+		 */
 		int currentPosition = noteCollection.indexOf(this.getRoot()) ;
 		
+		/*
+		 * Now just walk through the sequence of steps that define this scale
+		 */
 		for ( int seq : getSequence() )
 		{
-			scale = scale + noteSeparator ;
+			/*
+			 * Add the note separator
+			 */
+			scaleOutput = scaleOutput + noteSeparator ;
+			/*
+			 * Advance the position
+			 */
 			currentPosition = currentPosition + seq ;
+			/*
+			 * Get the note out of the list
+			 */
 			String noteToAdd = noteCollection.get(currentPosition);
-			scale = scale + noteToAdd;
-			noteSeparator = ",";
+			/*
+			 * Add the note to the output
+			 */
+			scaleOutput = scaleOutput + noteToAdd;
 		}
 		
-		return scale;
+		return scaleOutput;
 	}
 	
 	public void printScale()
