@@ -1,3 +1,4 @@
+package scaleplayer;
 /**
  * Created by clairehumen on 3/21/17.
  */

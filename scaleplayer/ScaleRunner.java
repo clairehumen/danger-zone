@@ -1,3 +1,5 @@
+package scaleplayer;
+
 /**
  * Created by clairehumen on 3/20/17.
  */

@@ -1,4 +1,4 @@
-package com.clairehumen;
+package clairehumen;
 
 import com.sun.corba.se.spi.orbutil.fsm.Input;
 

@@ -1,4 +1,4 @@
-package com.clairehumen;
+package clairehumen;
 
 public class Problem21 {
 	

@@ -1,4 +1,4 @@
-package com.clairehumen;
+package clairehumen;
 
 import java.util.ArrayList;
 
