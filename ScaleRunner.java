@@ -14,6 +14,10 @@ public class ScaleRunner
         ms.printScale();
         ms = new HarmonicMinorScale(Note.C);
         ms.printScale();
+        ms = new BluesScale(Note.Bb);
+        ms.printScale();
+        ms = new WholeToneScale(Note.B);
+        ms.printScale();
     }
 
 }

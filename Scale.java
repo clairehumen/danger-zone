@@ -103,5 +103,5 @@ public abstract class Scale {
 	public static final int SIXTH = 9 ;
 	public static final int DOM7 = 10 ;
 	public static final int MAJ7 = 11 ;
-	public abstract int[] getSequence();
+
 }
