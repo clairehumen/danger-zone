@@ -22,5 +22,5 @@ public class Note {
     public static final String B = "B";
 
     public static final String[] NOTE_SEQUENCE = {C,Db,D,Eb,E,F,Gb,G,Ab,A,Bb,B};
-    public static final String[] NOTE_SEQUENCE2 = {C,C_SHARP,D,D_SHARP,E,F_SHARP,G,G_SHARP,A,A_SHARP,B};
+    public static final String[] NOTE_SEQUENCE2 = {C,C_SHARP,D,D_SHARP,E,F,F_SHARP,G,G_SHARP,A,A_SHARP,B};
 }

@@ -3,9 +3,18 @@
  */
 public class HarmonicMinorScale extends MinorScale {
 
+	public HarmonicMinorScale(String root) {
+		super(root);
+	}
+
 	@Override
 	public int[] getSequence() {
-		// TODO Auto-generated method stub
-		return null;
+		return new MelodicMinorScale(this.getRoot()).getSequence() ;
+	}
+
+	@Override
+	public String getDownScale()
+	{
+		return new NaturalMinorScale(this.getRoot()).getDownScale();
 	}
 }
